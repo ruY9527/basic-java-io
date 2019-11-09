@@ -1,0 +1,7 @@
+
+org.springframework.context.ApplicationContextInitializer=\
+com.yang.spring.initializers.SimpleApplicationContextInitializer
+
+
+org.springframework.context.ApplicationListener=\
+com.yang.spring.listeners.SimpleApplicationListener
