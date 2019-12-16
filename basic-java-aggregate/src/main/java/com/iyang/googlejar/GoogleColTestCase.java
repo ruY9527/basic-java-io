@@ -4,7 +4,6 @@ package com.iyang.googlejar;
 import com.google.common.base.Function;
 import com.google.common.collect.MigrateMap;
 
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 
