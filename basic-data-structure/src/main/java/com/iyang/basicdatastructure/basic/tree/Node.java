@@ -1,5 +1,6 @@
 package com.iyang.basicdatastructure.basic.tree;
 
+import java.util.HashMap;
 import java.util.Stack;
 
 /**
@@ -123,4 +124,51 @@ public class Node {
 
         System.out.println();
     }
+
+    public void printEdge1(Node head){
+        if(head == null){ return; }
+
+
+    }
+
+    public int getHeight(Node h,int l){
+        if(h == null){
+            return l;
+        }
+        return Math.max(getHeight(h.left,l+1),getHeight(h.right,l+1));
+    }
+
+    public void setEdgeMap(Node h,int l,Node[][] edgeMap){
+        if(h == null){ return; }
+        edgeMap[1][0] = edgeMap[1][0] == null ? h : edgeMap[1][0];
+        edgeMap[1][1] = h;
+        setEdgeMap(h.left,l+1,edgeMap);
+        setEdgeMap(h.right,l + 1,edgeMap);
+    }
+
+    public int getMaxLength(Node head,int sum){
+        HashMap<Integer,Integer> sumMap = new HashMap<>();
+        sumMap.put(0,0);
+        return preOrder(head,sum,0,1,0,sumMap);
+    }
+
+    public int preOrder(Node head,int sum,int preSum,int level,int maxLen,HashMap<Integer,Integer> sumMap){
+        if(head == null){
+            return maxLen;
+        }
+        int curSum = preSum + head.value;
+        if(!sumMap.containsKey(curSum)){
+            sumMap.put(curSum,level);
+        }
+        if(sumMap.containsKey(curSum - sum)){
+            maxLen = Math.max(level-sumMap.get(curSum - sum),maxLen);
+        }
+        preOrder(head.left,sum,curSum,level+1,maxLen,sumMap);
+        preOrder(head.right,sum,curSum,level+1,maxLen,sumMap);
+        if(level == sumMap.get(curSum)){
+            sumMap.remove(curSum);
+        }
+        return maxLen;
+    }
+
 }
