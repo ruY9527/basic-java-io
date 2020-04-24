@@ -4,6 +4,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.HashMap;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+
 /***********************************************************************
  *<PRE>
  *
@@ -29,6 +33,11 @@ public class WorkerNameTest {
     @Test
     public void callNameTest(){
         workerOne.callAdd("A");
+        HashMap map = new HashMap();
+        ConcurrentHashMap m = new ConcurrentHashMap();
+
+        Set set = map.keySet();
+        ConcurrentHashMap.KeySetView keySet = m.keySet();
     }
 
 
