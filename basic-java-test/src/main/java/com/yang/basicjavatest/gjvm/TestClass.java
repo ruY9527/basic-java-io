@@ -1,5 +1,7 @@
 package com.yang.basicjavatest.gjvm;
 
+import sun.nio.ch.FileChannelImpl;
+
 /**
  * @Author: Mu_Yi
  * @Date: 2020/4/18 14:27
@@ -12,6 +14,7 @@ public class TestClass {
 
     public int inc(){
 
+        // FileChannelImpl
         return m + 1;
     }
 
