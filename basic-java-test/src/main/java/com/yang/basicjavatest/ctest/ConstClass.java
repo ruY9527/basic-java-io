@@ -1,5 +1,8 @@
 package com.yang.basicjavatest.ctest;
 
+import java.util.Arrays;
+import java.util.PriorityQueue;
+
 /***********************************************************************
  *<PRE>
  *
@@ -22,5 +25,16 @@ public class ConstClass {
     }
 
     public static final String HELLO_BINGO = "GavinYang";
+
+
+    public static void main(String[] args) {
+
+        PriorityQueue p = new PriorityQueue();
+
+        int [] ns = {1,1,1};
+
+        ns = Arrays.copyOf(ns,6);
+        System.out.println(ns.length);
+    }
 
 }
