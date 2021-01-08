@@ -1,0 +1,23 @@
+package com.iyang.basic.netty.encoders;
+
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.handler.codec.MessageToMessageEncoder;
+
+import java.util.List;
+
+/**
+ * @author Yang
+ * 当前服务 : basic-java-netty
+ * @date 2021/1/8 / 16:05
+ */
+
+public class IntegerToStringEncoder extends MessageToMessageEncoder<Integer> {
+
+    @Override
+    protected void encode(ChannelHandlerContext ctx, Integer msg, List<Object> out) throws Exception {
+
+        out.add(String.valueOf(msg));
+
+    }
+
+}
