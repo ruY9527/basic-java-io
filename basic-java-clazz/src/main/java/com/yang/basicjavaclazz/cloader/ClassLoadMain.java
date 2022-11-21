@@ -1,6 +1,6 @@
 package com.yang.basicjavaclazz.cloader;
 
-import com.yang.basicjavaclazz.domain.Teacher;
+//import com.yang.basicjavaclazz.domain.Teacher;
 
 /**
  * 类加载的全过程
@@ -12,7 +12,7 @@ public class ClassLoadMain {
     public static final String name = "BaoYang";
     public static final int age = 24;
 
-    Teacher teacher = new Teacher();
+    // Teacher teacher = new Teacher();
 
     public int add(){
 

@@ -20,4 +20,9 @@ public class Teacher {
     public void setAge(String age) {
         this.age = age;
     }
+
+    public void say(){
+        System.out.println("I'm a teacher");
+    }
+
 }
