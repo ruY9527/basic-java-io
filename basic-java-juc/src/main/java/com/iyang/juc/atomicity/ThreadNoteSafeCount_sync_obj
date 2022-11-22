@@ -1,0 +1,66 @@
+Compiled from "ThreadNoteSafeCount.java"
+public class com.iyang.juc.atomicity.ThreadNoteSafeCount {
+  java.lang.Object obj;
+
+  public com.iyang.juc.atomicity.ThreadNoteSafeCount();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: aload_0
+       5: new           #2                  // class java/lang/Object
+       8: dup
+       9: invokespecial #1                  // Method java/lang/Object."<init>":()V
+      12: putfield      #3                  // Field obj:Ljava/lang/Object;
+      15: return
+
+  public java.lang.Long getCount();
+    Code:
+       0: aload_0
+       1: getfield      #3                  // Field obj:Ljava/lang/Object;
+       4: dup
+       5: astore_1
+       6: monitorenter
+       7: aload_0
+       8: getfield      #4                  // Field value:Ljava/lang/Long;
+      11: aload_1
+      12: monitorexit
+      13: areturn
+      14: astore_2
+      15: aload_1
+      16: monitorexit
+      17: aload_2
+      18: athrow
+    Exception table:
+       from    to  target type
+           7    13    14   any
+          14    17    14   any
+
+  public synchronized void inc();
+    Code:
+       0: aload_0
+       1: getfield      #3                  // Field obj:Ljava/lang/Object;
+       4: dup
+       5: astore_1
+       6: monitorenter
+       7: aload_0
+       8: aload_0
+       9: getfield      #4                  // Field value:Ljava/lang/Long;
+      12: invokevirtual #5                  // Method java/lang/Long.longValue:()J
+      15: lconst_1
+      16: ladd
+      17: invokestatic  #6                  // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+      20: putfield      #4                  // Field value:Ljava/lang/Long;
+      23: aload_1
+      24: monitorexit
+      25: goto          33
+      28: astore_2
+      29: aload_1
+      30: monitorexit
+      31: aload_2
+      32: athrow
+      33: return
+    Exception table:
+       from    to  target type
+           7    25    28   any
+          28    31    28   any
+}

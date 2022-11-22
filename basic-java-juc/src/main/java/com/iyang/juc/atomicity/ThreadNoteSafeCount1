@@ -1,0 +1,26 @@
+Compiled from "ThreadNoteSafeCount.java"
+public class com.iyang.juc.atomicity.ThreadNoteSafeCount {
+  public com.iyang.juc.atomicity.ThreadNoteSafeCount();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public java.lang.Long getCount();
+    Code:
+       0: aload_0
+       1: getfield      #2                  // Field value:Ljava/lang/Long;
+       4: areturn
+
+  public void inc();
+    Code:
+       0: aload_0
+       1: aload_0
+       2: getfield      #2                  // Field value:Ljava/lang/Long;
+       5: invokevirtual #3                  // Method java/lang/Long.longValue:()J
+       8: lconst_1
+       9: ladd
+      10: invokestatic  #4                  // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+      13: putfield      #2                  // Field value:Ljava/lang/Long;
+      16: return
+}
