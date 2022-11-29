@@ -28,7 +28,7 @@ public class RpcConsumer {
     private static HelloClientHandler client;
 
     public Object createProxy(final Class<?> serviceClass,final String providerName){
-        return Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(),new Class<?>[]{serviceClass},
+/*        return Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(),new Class<?>[]{serviceClass},
                 (proxy,method,args) -> {
                     if(client == null){
                         // 初始化
@@ -36,7 +36,8 @@ public class RpcConsumer {
                     }
                     client.setPara(providerName + args[0]);
                     return executor.submit(client).get();
-                });
+                });*/
+        return null;
     }
 
 
